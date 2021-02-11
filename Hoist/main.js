@@ -114,3 +114,67 @@ console.log(genre);
 
 //It will print undefined, rock, r&b, disco
 ////////////////////////////////////////////////////////////////////////////////////
+
+
+// Given
+dojo = "san jose";
+console.log(dojo);
+learn();
+function learn() {
+    console.log(dojo);
+    dojo = "seattle";
+    console.log(dojo);
+    var dojo = "burbank";
+    console.log(dojo);
+}
+console.log(dojo);
+
+// After Hoisted
+// function learn() {
+//         var dojo;
+//         console.log(dojo);
+//         dojo = "seattle";
+//         console.log(dojo);
+//         dojo = "burbank";
+//         console.log(dojo);
+//     }
+// dojo = "san jose";
+// console.log(dojo);
+// learn();
+// console.log(dojo);
+
+// it will print  san jose, undifined, seattle, dojo, burbank, san jose
+////////////////////////////////////////////////////////////////////////////////////////
+
+// Given
+
+console.log(makeDojo("Chicago", 65));
+console.log(makeDojo("Berkeley", 0));
+function makeDojo(name, students){
+    const dojo = {};
+    dojo.name = name;
+    dojo.students = students;
+    if(dojo.students > 50){
+        dojo.hiring = true;
+    }
+    else if(dojo.students <= 0){
+        dojo.closed = "closed for now";
+    }
+    return dojo;
+}
+
+//After Hoisted
+// function makeDojo(name, students){
+//         const dojo = {};
+//         dojo.name = name;
+//         dojo.students = students;
+//         if(dojo.students > 50){
+//             dojo.hiring = true;
+//         }
+//         else if(dojo.students <= 0){
+//             dojo = "closed for now";
+//         }
+//         return dojo;
+//     }
+// console.log(makeDojo("Chicago", 65));
+// console.log(makeDojo("Berkeley", 0));
