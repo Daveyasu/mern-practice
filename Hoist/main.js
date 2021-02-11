@@ -84,3 +84,33 @@ console.log(food);
 // console.log(food);
 // mean();
 //It will print undifined
+////////////////////////////////////////////////////////////////////////////////////
+
+//Given
+console.log(genre);
+var genre = "disco";
+rewind();
+function rewind() {
+    genre = "rock";
+    console.log(genre);
+    var genre = "r&b";
+    console.log(genre);
+}
+console.log(genre);
+
+//After Hoisted
+// var genre;
+// function rewind() {
+//         var genre;   
+//         genre = "rock";
+//         console.log(genre);
+//         genre = "r&b";
+//         console.log(genre);
+//     }
+// console.log(genre);
+// genre = "disco";
+// console.log(genre);
+// rewind();
+
+//It will print undefined, rock, r&b, disco
+////////////////////////////////////////////////////////////////////////////////////
